@@ -5,6 +5,8 @@ import VueRouter from 'vue-router'
 
 import App from './App'
 import Home from './components/Home'
+import store from './store'
+import TimeEntries from './components/TimeEntries'
 import 'bootstrap/dist/css/bootstrap.css'
 
 Vue.use(VueRouter);
@@ -15,6 +17,9 @@ const routes=[{
   },{
     path:'/home',
     component:Home
+  },{
+    path:'/time-entries',
+    component:TimeEntries
   }
 ]
 
@@ -25,5 +30,6 @@ const router=new VueRouter({
 new Vue({
   el: '#app',
   router,
+  store,
   ...App
 })

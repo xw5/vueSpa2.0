@@ -47,7 +47,7 @@ export default {
   name:'TimeEntries',
   computed:{
     plans(){
-      return this.$store.list
+      return this.$store.state.list
     }
   },
   methods:{
