@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link v-if="$route.path!=='/time-entries/log-time'" to="/time-entries/log-time" class="btn btn-primary" tag="button"></router-link>
+    <router-link v-if="$route.path!=='/time-entries/log-time'" to="/time-entries/log-time" class="btn btn-primary" tag="button">创建</router-link>
     <div v-if="$route.path==='/time-entries/log-time'">
       <h3>创建</h3>
     </div>
@@ -53,7 +53,7 @@ export default {
   methods:{
     deletePlan(idx){
       //减去总时间
-      this.$store.dispatch('decTotalTime',this.plans[index].totalTime);
+      this.$store.dispatch('decTotalTime',this.plans[idx].totalTime);
       //删除该计划
       this.$store.dispatch('deletePlan',idx);
     }
